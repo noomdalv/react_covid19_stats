@@ -1,15 +1,15 @@
 import React from 'react';
 
-const CountryFilter = () => {
-	<div>
-		<label htmlFor="countryFilter">
-		Select a Country to display stats:
-			<option value="" id="countryFilter">
-				<select name="" id="">Test Country</select>
-			</option>
-		</label>
+const CountryFilter = () => (
+  <div>
+    <label htmlFor="countryFilter">
+      Select a Country to display stats:
+      <select id="countryFilter">
+        <option name="" id="">Test Country</option>
+      </select>
+    </label>
 
-	</div>
-}
+  </div>
+);
 
 export default CountryFilter;

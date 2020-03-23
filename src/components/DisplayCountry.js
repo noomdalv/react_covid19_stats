@@ -1,13 +1,10 @@
 import React from 'react';
+import CountryStats from '../containers/CountryStats';
 
-class DisplayCountry extends React.Component {
-	render() {
-		return (
-			<div>
-				<CountryStats />
-			</div>
-		)
-	}
-}
+const DisplayCountry = () => (
+  <div>
+    <CountryStats />
+  </div>
+);
 
 export default DisplayCountry;
