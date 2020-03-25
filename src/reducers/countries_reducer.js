@@ -1,7 +1,8 @@
+const LOAD_COUNTRIES = 'LOAD_COUNTRIES';
 const defaultState = ['Loading...'];
 
 const countriesReducer = (state = defaultState, action) => {
-  if (action.type === 'LOAD_COUNTRIES') {
+  if (action.type === LOAD_COUNTRIES) {
     return action.countries;
   }
   return state;

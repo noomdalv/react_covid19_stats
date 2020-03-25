@@ -1,17 +1,21 @@
 import axios from 'axios';
 
+const LOAD_GLOBAL_STATS = 'LOAD_GLOBAL_STATS';
+const LOAD_COUNTRIES = 'LOAD_COUNTRIES';
+const LOAD_COUNTRY_STATS = 'LOAD_COUNTRY_STATS';
+
 export const loadGlobalStats = data => ({
-  type: 'LOAD_GLOBAL_STATS',
+  type: LOAD_GLOBAL_STATS,
   globalStats: data,
 });
 
 export const loadCountries = countries => ({
-  type: 'LOAD_COUNTRIES',
+  type: LOAD_COUNTRIES,
   countries,
 });
 
 export const loadCountryStats = stats => ({
-  type: 'LOAD_COUNTRY_STATS',
+  type: LOAD_COUNTRY_STATS,
   countryStats: stats,
 });
 
