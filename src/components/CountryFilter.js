@@ -1,27 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-const CountryFilter = () => {
-	loadCountries();
-	console.log("countryfilter", countries);
-	return (
-		<div>
-	    <label htmlFor="countryFilter">
-	      Select a Country to display stats:
-	      <select id="countryFilter">
-	        <option name="" id="">Test Country</option>
-	      </select>
-	    </label>
-	  </div>
-	)
+class CountryFilter extends React.Component {
+	componentDidMount() {
+		this.props.getCountries();
+	}
+		
+	render() {
+		const loadCountries = this.props.countries.map((country, i) => {
+			return <option key={"country_"+i} value={"country_"+country}>{country}</option>
+		})
+		return (
+			<div>
+				<label htmlFor="countryFilter">
+					Select a Country to display stats:
+					<select id="countryFilter">
+						{ loadCountries }
+					</select>
+				</label>
+			</div>
+		)
+	}
 };
 
-const mapPropsToState = state => ({
-	countries: state.countries
-});
-
-const mapDispatchToProps = dispatch => ({
-	loadCountries: () => dispatch(loadCountries())
-})
-
-export default connect(mapPropsToState, mapDispatchToProps)(CountryFilter);
+export default CountryFilter;

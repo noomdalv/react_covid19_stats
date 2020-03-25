@@ -1,8 +1,9 @@
-const countriesReducer = (state = [], action) => {
+const defaultState = ["Loading..."];
+
+const countriesReducer = (state = defaultState, action) => {
 	if (action.type === "LOAD_COUNTRIES") {
-		return {
-			countries: action.countries
-		}
+		console.log("load countries reducer fired")
+		return action.countries
 	}
 	return state
 }
