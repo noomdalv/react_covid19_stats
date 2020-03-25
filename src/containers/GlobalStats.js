@@ -1,25 +1,21 @@
 import React from 'react';
 
 class GlobalStats extends React.Component {
-	// componentDidMount() {
-	// 	this.getGlobalStats();
-	// }
+	componentDidMount() {
+		this.props.getGlobalStats();
+	}
 
-  render() {
-		// console.log("rendering...");
-		// console.log("check data", this.state.globalData !== {})
-		//
-		// const stats = this.state.globalData !== {} ? (
-		// 	<div>
-		//   	<p>Confirmed: { this.state.globalData.total_cases }</p>
-		// 		<p>Recovered: { this.state.globalData.total_recovered }</p>
-		// 	  <p>Deaths: { this.state.globalData.total_deaths }</p>
-		//   </div>
-		// ) : (<div className="center">Loading Data...</div>)
+  render() {		
+		const stats = this.props.globalStats !== {} ? (
+			<div>
+				<p>Confirmed: { this.props.globalStats.total_cases }</p>
+				<p>Recovered: { this.props.globalStats.total_recovered }</p>
+				<p>Deaths: { this.props.globalStats.total_deaths }</p>
+			</div>
+		) : <div>Loading Data...</div>
 		return (
 			<div>
-				<h1>Global Stats</h1>
-				
+				{ stats }
 			</div>
 		)
   }
