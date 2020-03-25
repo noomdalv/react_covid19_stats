@@ -1,24 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import CountryStats from '../components/CountryStats';
 import { getCountryStats } from '../actions';
-import { connect } from 'react-redux';
 
 class DisplayCountry extends React.Component {
-	componentDidMount() {
-		this.props.getCountryStats();
-	}
+  componentDidMount() {
+    const { getCountryStats } = this.props;
+    getCountryStats();
+  }
 
-	render() {		
-		return (
-			<div>
-		    <CountryStats />
-		  </div>
-		)
-	}
+  render() {
+    const { countryStats } = this.props;
+    return (
+      <div>
+        <CountryStats countryStats={countryStats} />
+      </div>
+    );
+  }
+}
+
+DisplayCountry.propTypes = {
+  getCountryStats: PropTypes.func.isRequired,
+  countryStats: PropTypes.instanceOf(Array).isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-	getCountryStats: () => dispatch(getCountryStats())
-})
+const mapStatetoProps = state => ({
+  countryStats: state.countryStats,
+});
 
-export default connect(null, mapDispatchToProps)(DisplayCountry);
+const mapDispatchToProps = dispatch => ({
+  getCountryStats: () => dispatch(getCountryStats()),
+});
+
+export default connect(mapStatetoProps, mapDispatchToProps)(DisplayCountry);

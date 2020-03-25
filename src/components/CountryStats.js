@@ -1,24 +1,37 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-class CountryStats extends React.Component {
-	render() {
-		console.log("COUNTRY STATS", this.props.countryStats)
-		const stats = this.props.countryStats.length > 0 ? Object.values(this.props.countryStats) : "Choose a country";
-		return (
-			<div>
-		    <h2>Country Information:</h2>
-		    <p>Name: {stats[0].country_name}</p>
-		    <p>Cases: {stats[0].cases}</p>
-		    <p>Deaths: {stats[0].deaths}</p>
-		    <p>Recovered: {stats[0].total_recovered}</p>
-		  </div>
-		)
-	}
+const CountryStats = ({ countryStats }) => {
+  if (countryStats.length > 0) {
+    return (
+      <div>
+        <h2>Country Information:</h2>
+        <p>
+          Name:
+          { countryStats[0] }
+        </p>
+        <p>
+          Cases:
+          { countryStats[1] }
+        </p>
+        <p>
+          Deaths:
+          { countryStats[2] }
+        </p>
+        <p>
+          Recovered:
+          { countryStats[4] }
+        </p>
+      </div>
+    );
+  }
+  return (
+    <h1>Choose a country</h1>
+  );
 };
 
-const mapStatetoProps = state => ({
-	countryStats: state.countryStats
-})
+CountryStats.propTypes = {
+  countryStats: PropTypes.instanceOf(Array).isRequired,
+};
 
-export default connect(mapStatetoProps)(CountryStats);
+export default CountryStats;
