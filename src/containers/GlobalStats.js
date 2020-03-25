@@ -1,21 +1,41 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class GlobalStats extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  componentDidMount() {
+    const { getGlobalStats } = this.props;
+    getGlobalStats();
   }
 
   render() {
+    const { globalStats } = this.props;
+    const stats = globalStats !== {} ? (
+      <div>
+        <p>
+          Confirmed:
+          { globalStats.total_cases }
+        </p>
+        <p>
+          Recovered:
+          { globalStats.total_recovered }
+        </p>
+        <p>
+          Deaths:
+          { globalStats.total_deaths }
+        </p>
+      </div>
+    ) : <div>Loading Data...</div>;
     return (
       <div>
-        <h1>Global Stats</h1>
-        <p>Confirmed: 0</p>
-        <p>Deaths: 0</p>
-        <p>Recovered: 0</p>
+        { stats }
       </div>
     );
   }
 }
+
+GlobalStats.propTypes = {
+  getGlobalStats: PropTypes.func.isRequired,
+  globalStats: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default GlobalStats;
