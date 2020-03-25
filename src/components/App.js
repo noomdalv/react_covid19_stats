@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getCountries, getGlobalStats } from '../actions';
 import GlobalStats from '../containers/GlobalStats';
 import CountryFilter from './CountryFilter';
-import DisplayCountry from './DisplayCountry';
+import DisplayCountry from '../containers/DisplayCountry';
 
 const App = (props) => (
 	<div>
@@ -14,7 +14,6 @@ const App = (props) => (
 	</div>
 )
 
-
 const mapStatetoProps = state => ({
 	countries: state.countries,
 	globalStats: state.globalStats
@@ -22,7 +21,7 @@ const mapStatetoProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	getCountries: () => dispatch(getCountries()),
-	getGlobalStats: () => dispatch(getGlobalStats())
+	getGlobalStats: () => dispatch(getGlobalStats()),
 })
 
 export default connect(mapStatetoProps, mapDispatchToProps)(App);
