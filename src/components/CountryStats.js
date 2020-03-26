@@ -24,6 +24,7 @@ const CountryStats = ({ countryStats }) => {
             Recovered:
             { countryStats[4] }
           </p>
+          <img src={`https://www.countryflags.io/${countryStats[10]}/shiny/64.png`} alt="flag" />
         </div>
         <Redirect to={`/stats/${countryStats[0]}`} />
       </Router>

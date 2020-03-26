@@ -27,8 +27,9 @@ class CountryFilter extends React.Component {
     return (
       <div>
         <label htmlFor="countryFilter">
-          Select a Country to display stats:
+          Select to Display Statistics:
           <select id="countryFilter" onChange={this.handleChange}>
+            <option value="">Choose a Country</option>
             { loadCountries }
           </select>
         </label>

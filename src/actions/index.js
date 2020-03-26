@@ -41,14 +41,23 @@ export const getCountries = () => dispatch => axios.get('https://coronavirus-mon
     dispatch(loadCountries(countriesArray));
   });
 
-export const getCountryStats = countryName => dispatch => axios.get('https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php', {
-  headers: {
-    'x-rapidapi-host': 'coronavirus-monitor.p.rapidapi.com',
-    'x-rapidapi-key': '5c719792d4msh7f9766d6d5c3653p1484ccjsn29e5a49c38b4',
-  },
-})
-  .then(response => {
-    let countryStats = response.data.countries_stat;
-    countryStats = countryStats.filter(country => country.country_name === countryName);
-    dispatch(loadCountryStats(countryStats));
-  });
+export const getCountryStats = countryName => dispatch => {
+  axios.get('https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php', {
+    headers: {
+      'x-rapidapi-host': 'coronavirus-monitor.p.rapidapi.com',
+      'x-rapidapi-key': '5c719792d4msh7f9766d6d5c3653p1484ccjsn29e5a49c38b4',
+    },
+  })
+    .then(response => {
+      let countryStats = response.data.countries_stat;
+      countryStats = countryStats.filter(country => country.country_name === countryName);
+      if (countryName) {
+        axios.get(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
+          .then(response => {
+            const countryCode = response.data[0].alpha2Code.toLowerCase();
+            countryStats['0'].code = countryCode;
+            dispatch(loadCountryStats(countryStats));
+          });
+      }
+    });
+};
