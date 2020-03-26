@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCountryStats } from '../actions';
 
+
 class CountryFilter extends React.Component {
   constructor(props) {
     super(props);

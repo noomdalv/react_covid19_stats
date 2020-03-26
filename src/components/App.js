@@ -1,6 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { getCountries, getGlobalStats } from '../actions';
 import GlobalStats from '../containers/GlobalStats';
 import CountryFilter from './CountryFilter';
@@ -9,12 +10,15 @@ import DisplayCountry from '../containers/DisplayCountry';
 const App = ({
   getGlobalStats, getCountries, globalStats, countries,
 }) => (
-  <div>
-    <h1>CoronaVirus(COVID-19) STATISTICS</h1>
-    <GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
-    <CountryFilter getCountries={getCountries} countries={countries} />
-    <DisplayCountry />
-  </div>
+  <Router>
+    <div>
+      <h1>CoronaVirus(COVID-19) STATISTICS</h1>
+      <GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
+      <CountryFilter getCountries={getCountries} countries={countries} />
+      <DisplayCountry />
+    </div>
+    <Redirect to="/stats/" />
+  </Router>
 );
 
 App.propTypes = {

@@ -12,9 +12,10 @@ class DisplayCountry extends React.Component {
 
   render() {
     const { countryStats } = this.props;
+    const country = countryStats.length > 0 ? countryStats[0] : '';
     return (
       <div>
-        <CountryStats countryStats={countryStats} />
+        <CountryStats country={country} countryStats={countryStats} />
       </div>
     );
   }
