@@ -1,20 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { getCountries, getGlobalStats } from '../actions';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import GlobalStats from '../containers/GlobalStats';
 import CountryFilter from './CountryFilter';
 import DisplayCountry from '../containers/DisplayCountry';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const App = ({
   getGlobalStats, getCountries, globalStats, countries,
 }) => (
-  <div>
-    <h1>CoronaVirus(COVID-19) STATISTICS</h1>
-    <GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
-    <CountryFilter getCountries={getCountries} countries={countries} />
-    <DisplayCountry />
-  </div>
+	<Router>		
+		<div>
+			<h1>CoronaVirus(COVID-19) STATISTICS</h1>
+			<GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
+			<CountryFilter getCountries={getCountries} countries={countries} />
+			<DisplayCountry />
+		</div>
+		<Redirect to="/stats/" />
+	</Router>
 );
 
 App.propTypes = {

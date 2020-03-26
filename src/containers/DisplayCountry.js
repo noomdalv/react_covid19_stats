@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import CountryStats from '../components/CountryStats';
 import { getCountryStats } from '../actions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class DisplayCountry extends React.Component {
   componentDidMount() {
@@ -10,12 +10,13 @@ class DisplayCountry extends React.Component {
     getCountryStats();
   }
 
-  render() {
+  render() {		
     const { countryStats } = this.props;
+		const country = countryStats.length > 0 ? countryStats[0] : "";
     return (
-      <div>
-        <CountryStats countryStats={countryStats} />
-      </div>
+			<div>
+				<CountryStats country={country} countryStats={countryStats} />
+			</div>
     );
   }
 }
