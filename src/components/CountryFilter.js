@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Select from 'react-select';
 import { getCountryStats } from '../actions';
-
+import styles from './CountryFilter.module.css';
 
 class CountryFilter extends React.Component {
   constructor(props) {
@@ -15,23 +16,24 @@ class CountryFilter extends React.Component {
     getCountries();
   }
 
-  handleChange(event) {
-    event.preventDefault();
+  handleChange(option) {
     const { getCountryStats } = this.props;
-    getCountryStats(event.target.value);
+    getCountryStats(option.value);
   }
 
   render() {
     const { countries } = this.props;
-    const loadCountries = countries.map(country => <option key={country}>{country}</option>);
+    const options = [];
+    countries.map(country => options.push({ value: country, label: country }));
     return (
-      <div>
-        <label htmlFor="countryFilter">
-          Select a Country to display stats:
-          <select id="countryFilter" onChange={this.handleChange}>
-            { loadCountries }
-          </select>
-        </label>
+      <div id={styles.countryFilter}>
+        <h3 id={styles.select_heading}>STATISTICS BY COUNTRY:</h3>
+        <Select
+          id={styles.countryList}
+          defaultValue={{ label: 'Choose a location...', value: 0 }}
+          onChange={this.handleChange}
+          options={options}
+        />
       </div>
     );
   }

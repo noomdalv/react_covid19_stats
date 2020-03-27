@@ -1,4 +1,5 @@
 import axios from 'axios';
+import codes from '../utils/countrycodes';
 
 const LOAD_GLOBAL_STATS = 'LOAD_GLOBAL_STATS';
 const LOAD_COUNTRIES = 'LOAD_COUNTRIES';
@@ -41,14 +42,21 @@ export const getCountries = () => dispatch => axios.get('https://coronavirus-mon
     dispatch(loadCountries(countriesArray));
   });
 
-export const getCountryStats = countryName => dispatch => axios.get('https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php', {
-  headers: {
-    'x-rapidapi-host': 'coronavirus-monitor.p.rapidapi.com',
-    'x-rapidapi-key': '5c719792d4msh7f9766d6d5c3653p1484ccjsn29e5a49c38b4',
-  },
-})
-  .then(response => {
-    let countryStats = response.data.countries_stat;
-    countryStats = countryStats.filter(country => country.country_name === countryName);
-    dispatch(loadCountryStats(countryStats));
-  });
+export const getCountryStats = countryName => dispatch => {
+  axios.get('https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php', {
+    headers: {
+      'x-rapidapi-host': 'coronavirus-monitor.p.rapidapi.com',
+      'x-rapidapi-key': '5c719792d4msh7f9766d6d5c3653p1484ccjsn29e5a49c38b4',
+    },
+  })
+    .then(response => {
+      let countryStats = response.data.countries_stat;
+      countryStats = countryStats.filter(country => country.country_name === countryName);
+      if (countryName) {
+        let countryCode = Object.keys(codes).filter(key => codes[key] === countryName);
+        if (countryName === 'Channel Islands' || countryName === 'Diamond Princess') { countryCode = 'GB'; }
+        countryStats['0'].code = countryCode;
+        dispatch(loadCountryStats(countryStats));
+      }
+    });
+};
