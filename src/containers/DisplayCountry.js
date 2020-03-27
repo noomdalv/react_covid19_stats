@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CountryStats from '../components/CountryStats';
 import { getCountryStats } from '../actions';
+import styles from './DisplayCountry.module.css';
 
 class DisplayCountry extends React.Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class DisplayCountry extends React.Component {
     const { countryStats } = this.props;
     const country = countryStats.length > 0 ? countryStats[0] : '';
     return (
-      <div>
+      <div id={styles.display_country}>
         <CountryStats country={country} countryStats={countryStats} />
       </div>
     );

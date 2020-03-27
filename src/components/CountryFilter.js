@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCountryStats } from '../actions';
 import Select from 'react-select';
+import { getCountryStats } from '../actions';
 import styles from './CountryFilter.module.css';
 
 class CountryFilter extends React.Component {
@@ -23,17 +23,17 @@ class CountryFilter extends React.Component {
 
   render() {
     const { countries } = this.props;
-		const options = []
-    countries.map(country => options.push({value: country, label: country}));
+    const options = [];
+    countries.map(country => options.push({ value: country, label: country }));
     return (
-      <div>
-          <h3>Display Statistics:</h3>
-					<Select
-						id={styles.countryList}
-						defaultValue={{ label: "Choose a location...", value: 0 }}
-						onChange={this.handleChange}
-						options={options}
-					/>
+      <div id={styles.countryFilter}>
+        <h3 id={styles.select_heading}>STATISTICS BY COUNTRY:</h3>
+        <Select
+          id={styles.countryList}
+          defaultValue={{ label: 'Choose a location...', value: 0 }}
+          onChange={this.handleChange}
+          options={options}
+        />
       </div>
     );
   }

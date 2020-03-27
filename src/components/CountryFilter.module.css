@@ -1,4 +1,14 @@
+#countryFilter {
+	width: 80%;
+	margin-top: 40px;
+	display: flex;
+}
+
 #countryList {
 	width: 300px;
 	font-size: 18px;
+}
+
+#select_heading {
+	margin: auto;
 }
