@@ -1,4 +1,5 @@
 import axios from 'axios';
+import codes from '../utils/countrycodes';
 
 const LOAD_GLOBAL_STATS = 'LOAD_GLOBAL_STATS';
 const LOAD_COUNTRIES = 'LOAD_COUNTRIES';
@@ -52,12 +53,10 @@ export const getCountryStats = countryName => dispatch => {
       let countryStats = response.data.countries_stat;
       countryStats = countryStats.filter(country => country.country_name === countryName);
       if (countryName) {
-        axios.get(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
-          .then(response => {
-            const countryCode = response.data[0].alpha2Code.toLowerCase();
-            countryStats['0'].code = countryCode;
-            dispatch(loadCountryStats(countryStats));
-          });
+        let countryCode = Object.keys(codes).filter(key => codes[key] === countryName);
+        if (countryName === 'Channel Islands' || countryName === 'Diamond Princess') { countryCode = 'GB'; }
+        countryStats['0'].code = countryCode;
+        dispatch(loadCountryStats(countryStats));
       }
     });
 };

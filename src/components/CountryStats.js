@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 const CountryStats = ({ countryStats }) => {
+  console.log('country stats code >', countryStats[10]);
   if (countryStats.length > 0) {
     return (
       <Router>
