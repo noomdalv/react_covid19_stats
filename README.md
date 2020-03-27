@@ -1,6 +1,6 @@
 # Capstone Project: Catalogue of Statistics
 
-> Final React Project of the Microverse Technical Curriculum Program.
+> Final React Project of the Microverse Technical Curriculum Program, this project consist in a Single Page Application that shows statistics for covid-19 virus by filtering countries from a list menu.
 
 ## Built With
 
@@ -11,12 +11,12 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://https://covid-19statistics.herokuapp.com/)
 
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Setup
 
