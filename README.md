@@ -11,6 +11,7 @@
 
 ## App Screenshot
 ![screenshot](./src/utils/app_screenshot.jpg)
+![screenshot](./src/utils/app_screenshot2.jpg)
 
 ## Live Demo
 
