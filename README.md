@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[Live Demo Link](covid-19statistics.herokuapp.com/)
+[Live Demo Link](https://covid-19statistics.herokuapp.com/stats/)
 
 
 ## Getting Started
