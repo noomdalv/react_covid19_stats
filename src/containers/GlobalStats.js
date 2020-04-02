@@ -41,6 +41,8 @@ class GlobalStats extends React.Component {
             <b>Updated at: </b>
             {' '}
             {globalStats.statistic_taken_at}
+            {' '}
+            (GMT +0)
           </div>
         </div>
       </div>
