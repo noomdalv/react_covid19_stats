@@ -1,32 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2:400&display=swap');
+
 #countryInfo {
-	width: 60%;
 	margin: auto;
 	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-columns: 2fr 1fr;
-	border-radius: 5px;
-	background: #fcfdfd;
+	grid-template-rows: 3fr 2fr 1fr;
+	grid-template-columns: 1fr;
+	font-family: 'Baloo 2', cursive;
+	font-size: 20px;
+	background: #cedcec;
+	border-radius: 10px;
+}
+
+#title_header {
+	margin: 0;
+	text-align: center;
+	color: white;
+	background: #207fd6;
+	border-radius: 10px;
 }
 
 #country_heading {
-	grid-row: 1/5;
+	width: 100%;
 	margin: auto;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	grid-template-rows: 1fr, 1fr;
+	grid-template-columns: 1fr;
 }
 
-#country_heading h1 {
-	margin: 0;
+.countryFlag {
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.countryFlag h1, img {
+	margin: auto;
+}
+
+.country_statWrapper {
+	padding: 20px;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .country_stat {
-	width: inherit;
-}
-
-.country_stat b {
 	margin: auto;
+	text-align: center;
 }
 
-#no_country {
+#no_country {	
+	margin: auto;
 	margin-top: 80px;
+	text-align: center;
+	font-family: 'Baloo 2', cursive;
+	font-size: 20px;
+}
+
+.return {
+	height: max-content;
+	margin: auto;
+	text-align: center;
+}
+
+.returnBtn {
+  background-color: #4CAF50;
+	border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+	font-family: 'Baloo 2', cursive;
+  font-size: 14px;
 }

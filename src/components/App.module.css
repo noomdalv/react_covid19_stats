@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+2:400&display=swap');
 
 #container {
-	position: relative;
 	width: 800px;
-	height: 690px;
 	margin: auto;
-	background: #f5f6f6;
+	margin-top: 30px;
+	background: #cedcec;
 	font-family: 'Baloo 2', cursive;
-	border-radius: 5px;
+	border-radius: 10px;
 	text-align: center;
-	border: solid black 1px;
 }
 
 #title_header {
-	color: #207fd6;
+	color: white;
+	background: #207fd6;
+	border-radius: 10px;
 }

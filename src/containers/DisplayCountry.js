@@ -1,30 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import CountryStats from '../components/CountryStats';
 import { getCountryStats } from '../actions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styles from './DisplayCountry.module.css';
 
-class DisplayCountry extends React.Component {
-  componentDidMount() {
-    const { getCountryStats } = this.props;
-    getCountryStats();
-  }
+const DisplayCountry = ({ getCountryStats, countryStats }) => {
+	let { country } = useParams();
+	useEffect(() => {
+		getCountryStats(country);
+	}, [getCountryStats, country])
 
-  render() {
-    const { countryStats } = this.props;
-    const country = countryStats.length > 0 ? countryStats[0] : '';
     return (
-      <div id={styles.display_country}>
-        <CountryStats country={country} countryStats={countryStats} />
-      </div>
+	    <div id={styles.display_country}>
+				<CountryStats country={country} countryStats={countryStats} />
+	    </div>
     );
-  }
 }
 
 DisplayCountry.propTypes = {
   getCountryStats: PropTypes.func.isRequired,
-  countryStats: PropTypes.instanceOf(Array).isRequired,
+  countryStats: PropTypes.instanceOf(Array)
 };
 
 const mapStatetoProps = state => ({
@@ -32,7 +29,7 @@ const mapStatetoProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getCountryStats: () => dispatch(getCountryStats()),
+  getCountryStats: (country) => dispatch(getCountryStats(country)),
 });
 
 export default connect(mapStatetoProps, mapDispatchToProps)(DisplayCountry);

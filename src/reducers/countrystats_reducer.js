@@ -3,7 +3,12 @@ const defaultState = [];
 
 const countryStatsReducer = (state = defaultState, action) => {
   if (action.type === LOAD_COUNTRY_STATS) {
-    return action.countryStats.length > 0 ? Object.values(action.countryStats['0']) : state;
+		console.log("reducer >", action.countryStats)
+		if (!action.countryStats) {
+			return ["not found"]
+		} else if (action.countryStats.length > 0) {
+			return Object.values(action.countryStats['0'])
+		}
   }
   return state;
 };
