@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CountryStats from '../components/CountryStats';
-import { getCountryStats } from '../actions';
+import Country from '../../components/Country/Country';
+import { getCountryStats } from '../../actions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './DisplayCountry.module.css';
@@ -14,7 +14,7 @@ const DisplayCountry = ({ getCountryStats, countryStats }) => {
 
     return (
 	    <div id={styles.display_country}>
-				<CountryStats country={country} countryStats={countryStats} />
+				<Country country={country} countryStats={countryStats} />
 	    </div>
     );
 }

@@ -15,13 +15,10 @@ export const loadCountries = countries => ({
   countries,
 });
 
-export const loadCountryStats = stats => {
-	console.log("hi", stats)
-	return {
-		type: LOAD_COUNTRY_STATS,
-	  countryStats: stats,
-	}
-};
+export const loadCountryStats = stats => ({
+	type: LOAD_COUNTRY_STATS,
+	 countryStats: stats,
+});
 
 export const getGlobalStats = () => dispatch => axios.get('https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php', {
   headers: {

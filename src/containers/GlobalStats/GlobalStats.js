@@ -11,7 +11,7 @@ class GlobalStats extends React.Component {
   render() {
     const { globalStats } = this.props;
     const stats = globalStats !== {} ? (
-      <div>
+      <div id={styles.globalStatsContainer}>
         <div id={styles.globalstats}>
           <div className={styles.globalstat}>
             <h2>Confirmed:</h2>

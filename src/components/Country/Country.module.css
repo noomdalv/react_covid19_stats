@@ -2,12 +2,13 @@
 
 #countryInfo {
 	margin: auto;
+	padding: 5px;
 	display: grid;
 	grid-template-rows: 3fr 2fr 1fr;
 	grid-template-columns: 1fr;
 	font-family: 'Baloo 2', cursive;
 	font-size: 20px;
-	background: #cedcec;
+	background: #e4f5f9;
 	border-radius: 10px;
 }
 
@@ -21,7 +22,8 @@
 
 #country_heading {
 	width: 100%;
-	margin: auto;
+	height: max-content;
+	margin: 0;
 	display: grid;
 	grid-template-rows: 1fr, 1fr;
 	grid-template-columns: 1fr;
@@ -49,7 +51,7 @@
 	text-align: center;
 }
 
-#no_country {	
+#no_country {
 	margin: auto;
 	margin-top: 80px;
 	text-align: center;
@@ -58,8 +60,7 @@
 }
 
 .return {
-	height: max-content;
-	margin: auto;
+	margin: 10px auto;
 	text-align: center;
 }
 

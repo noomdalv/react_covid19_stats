@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './CountryStats.module.css';
+import styles from './Country.module.css';
 
-const CountryStats = ({ countryStats }) => {
+const Country = ({ countryStats }) => {
 	if (countryStats.length > 0 && countryStats[0] !== "not found") {
     return (
         <div id={styles.countryInfo}>
@@ -39,7 +39,7 @@ const CountryStats = ({ countryStats }) => {
         </div>
     );
 	} else if (countryStats[0] === "not found") {
-		return (			
+		return (
 			<div className={styles.return}>
 				<h3 id={styles.no_country}>COUNTRY NOT FOUND</h3>
 				<Link to='/'>
@@ -53,8 +53,8 @@ const CountryStats = ({ countryStats }) => {
   );
 };
 
-CountryStats.propTypes = {
+Country.propTypes = {
   countryStats: PropTypes.instanceOf(Array)
 };
 
-export default CountryStats;
+export default Country;
