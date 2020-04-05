@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+2:400&display=swap');
 
 #container {
+	width: 65%;
 	margin: auto;
 	margin-top: 30px;
-	font-family: 'Baloo 2', cursive;	
+	font-family: 'Baloo 2', cursive;
 	border-radius: 10px;
 	text-align: center;
 }

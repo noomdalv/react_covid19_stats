@@ -1,10 +1,9 @@
 #countryFilterContainer {
-	width: 70%;
 	margin: auto;
 	color: white;
 }
 
-#countryFilter {	
+#countryFilter {
 	width: 80%;
 	margin: auto;
 	display: flex;
