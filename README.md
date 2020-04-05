@@ -9,9 +9,15 @@
 - React
 - Redux
 
+## Tools used
+
+- React select (styling)
+- Enzyme (testing)
+- Heroku (deployment)
+
 ## App Screenshot
-![screenshot](./src/utils/app_screenshot.jpg)
-![screenshot](./src/utils/app_screenshot2.jpg)
+![screenshot](./src/utils/screenshot1.jpg)
+![screenshot](./src/utils/screenshot2.jpg)
 
 ## Live Demo
 
