@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://covid-19statistics.herokuapp.com/stats/)
+[Live Demo Link](https://covid-19statistics.herokuapp.com/)
 
 ## API used
 
