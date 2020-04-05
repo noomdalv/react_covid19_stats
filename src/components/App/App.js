@@ -1,27 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCountries, getGlobalStats } from '../actions';
-import GlobalStats from '../containers/GlobalStats';
-import CountryFilter from './CountryFilter';
-import DisplayCountry from '../containers/DisplayCountry';
-import Footer from '../containers/Footer';
+import { getCountries, getGlobalStats } from '../../actions';
+import GlobalStats from '../../containers/GlobalStats/GlobalStats';
+import CountryFilter from '../CountryFilter/CountryFilter';
+import image from '../../utils/covid19thumbnail.jpg';
 import styles from './App.module.css';
 
 const App = ({
   getGlobalStats, getCountries, globalStats, countries,
 }) => (
-  <Router>
-    <div id={styles.container}>
-      <h1 id={styles.title_header}>CoronaVirus(COVID-19) GLOBAL STATISTICS</h1>
-      <GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
-      <CountryFilter getCountries={getCountries} countries={countries} />
-      <DisplayCountry />
-      <Footer />
-    </div>
-    <Redirect to="/stats/" />
-  </Router>
+  <div id={styles.container}>
+    <h1 id={styles.title_header}>CoronaVirus(COVID-19) GLOBAL STATISTICS</h1>
+    <img id={styles.thumbnail} src={image} alt="covid19thumbnail" />
+    <GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
+    <CountryFilter getCountries={getCountries} countries={countries} />
+  </div>
 );
 
 App.propTypes = {

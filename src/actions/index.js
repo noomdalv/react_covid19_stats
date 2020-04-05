@@ -50,12 +50,16 @@ export const getCountryStats = countryName => dispatch => {
     },
   })
     .then(response => {
-      let countryStats = response.data.countries_stat;
-      countryStats = countryStats.filter(country => country.country_name === countryName);
       if (countryName) {
-        let countryCode = Object.keys(codes).filter(key => codes[key] === countryName);
-        if (countryName === 'Channel Islands' || countryName === 'Diamond Princess') { countryCode = 'GB'; }
-        countryStats['0'].code = countryCode;
+        let countryStats = response.data.countries_stat;
+        countryStats = countryStats.filter(country => country.country_name === countryName);
+        if (countryStats.length > 0) {
+          let countryCode = Object.keys(codes).filter(key => codes[key] === countryName);
+          if (countryName === 'Channel Islands' || countryName === 'Diamond Princess') { countryCode = 'GB'; }
+          countryStats['0'].code = countryCode;
+        } else {
+          countryStats = undefined;
+        }
         dispatch(loadCountryStats(countryStats));
       }
     });

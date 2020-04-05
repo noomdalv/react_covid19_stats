@@ -1,0 +1,25 @@
+#countryFilterContainer {
+	width: 70%;
+	margin: auto;
+	color: white;
+}
+
+#countryFilter {	
+	width: 80%;
+	margin: auto;
+	display: flex;
+	background: #4c98de;
+	border-radius: 10px;
+}
+
+#countryList {
+	margin: auto;
+	width: 300px;
+	color: black;
+	font-size: 18px;
+	background-color: red;
+}
+
+#select_heading {
+	margin-left: 100px;
+}

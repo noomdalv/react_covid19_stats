@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2:400&display=swap');
+
+#countryInfo {
+	margin: auto;
+	padding: 5px;
+	display: grid;
+	grid-template-rows: 140px 100px 60px;
+	grid-template-columns: 1fr;
+	font-family: 'Baloo 2', cursive;
+	font-size: 20px;
+	background: #e4f5f9;
+	border-radius: 10px;
+}
+
+#title_header {
+	margin: 0;
+	text-align: center;
+	color: white;
+	background: #207fd6;
+	border-radius: 10px;
+}
+
+#country_heading {
+	width: 100%;
+	height: max-content;
+	margin: 0;
+	display: grid;
+	grid-template-rows: 1fr, 1fr;
+	grid-template-columns: 1fr;
+}
+
+.countryFlag {
+	padding: 20px 20px 0 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.countryFlag h1, img {
+	margin: auto;
+}
+
+.country_statWrapper {
+	padding: 0 20px;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.country_stat {
+	margin: auto;
+	text-align: center;
+}
+
+#no_country {
+	margin: auto;
+	margin-top: 80px;
+	text-align: center;
+	font-family: 'Baloo 2', cursive;
+	font-size: 20px;
+}
+
+.return {
+	margin: 10px auto;
+	text-align: center;
+}
+
+.returnBtn {
+  background-color: #4CAF50;
+	border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+	font-family: 'Baloo 2', cursive;
+  font-size: 14px;
+}

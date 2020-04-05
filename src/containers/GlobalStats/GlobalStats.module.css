@@ -1,8 +1,13 @@
+#globalStatsContainer {
+	padding: 10px;
+}
+
 #globalstats {
-	padding: 15px;
+	height: max-content;
+	padding: 15px 150px;
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 4fr 1fr 4fr;
 	text-align: center;
 }
 
@@ -20,9 +25,8 @@
 	display: grid;
 	grid-template-rows: 1fr ;
 	grid-template-columns: 1fr 1fr;
-	grid-column-gap: 20px;
+	grid-column-gap: 20px;	
 	border-radius: 4px;
-	background: #fcfdfd;
 }
 
 #lastreport h4 {
@@ -31,5 +35,5 @@
 
 #lastupdate {
 	grid-column: 1/3;
-	margin-top: 15px;
+	margin: 15px auto	;
 }
