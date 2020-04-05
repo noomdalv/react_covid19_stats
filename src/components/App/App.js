@@ -10,12 +10,12 @@ import styles from './App.module.css';
 const App = ({
   getGlobalStats, getCountries, globalStats, countries,
 }) => (
-    <div id={styles.container}>
-				<h1 id={styles.title_header}>CoronaVirus(COVID-19) GLOBAL STATISTICS</h1>
-				<img id={styles.thumbnail} src={image} alt="covid19thumbnail"/>
-				<GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
-				<CountryFilter getCountries={getCountries} countries={countries} />
-    </div>
+  <div id={styles.container}>
+    <h1 id={styles.title_header}>CoronaVirus(COVID-19) GLOBAL STATISTICS</h1>
+    <img id={styles.thumbnail} src={image} alt="covid19thumbnail" />
+    <GlobalStats getGlobalStats={getGlobalStats} globalStats={globalStats} />
+    <CountryFilter getCountries={getCountries} countries={countries} />
+  </div>
 );
 
 App.propTypes = {

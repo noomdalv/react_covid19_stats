@@ -4,34 +4,33 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import App from '../components/App/App';
 
-const mockStore = configureMockStore([ thunk ]);
+const mockStore = configureMockStore([thunk]);
 const storeStateMock = {
   globalStats: [],
-	countries: []
+  countries: [],
 };
 
 let appComponent;
 describe('App Component renders without errors', () => {
-
   beforeEach(() => {
     const store = mockStore(storeStateMock);
-		appComponent = shallow(<App store={store} />).dive().dive();
+    appComponent = shallow(<App store={store} />).dive().dive();
   });
 
-	it('should render main container and img thumbnail', () => {
-		const idContainer = appComponent.find('div#container');
-		const img = appComponent.find('img#thumbnail');
-		expect(idContainer.length).toBe(1);
-		expect(img.length).toBe(1);
-	})
+  it('should render main container and img thumbnail', () => {
+    const idContainer = appComponent.find('div#container');
+    const img = appComponent.find('img#thumbnail');
+    expect(idContainer.length).toBe(1);
+    expect(img.length).toBe(1);
+  });
 
-	it('should render GlobalStats component', () => {
-		const GlobalStats = appComponent.find('GlobalStats')
-		expect(GlobalStats.length).toEqual(1);
-	});
+  it('should render GlobalStats component', () => {
+    const GlobalStats = appComponent.find('GlobalStats');
+    expect(GlobalStats.length).toEqual(1);
+  });
 
-	it('should render CountryFilter component', () => {
-		const CountryFilter = appComponent.find('withRouter(CountryFilter)')
-		expect(CountryFilter.length).toEqual(1);
-	});
-})
+  it('should render CountryFilter component', () => {
+    const CountryFilter = appComponent.find('withRouter(CountryFilter)');
+    expect(CountryFilter.length).toEqual(1);
+  });
+});

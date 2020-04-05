@@ -16,8 +16,8 @@ export const loadCountries = countries => ({
 });
 
 export const loadCountryStats = stats => ({
-	type: LOAD_COUNTRY_STATS,
-	 countryStats: stats,
+  type: LOAD_COUNTRY_STATS,
+  countryStats: stats,
 });
 
 export const getGlobalStats = () => dispatch => axios.get('https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php', {
@@ -50,17 +50,17 @@ export const getCountryStats = countryName => dispatch => {
     },
   })
     .then(response => {
-	      if (countryName) {
-					let countryStats = response.data.countries_stat;
-		      countryStats = countryStats.filter(country => country.country_name === countryName);
-					if (countryStats.length > 0) {
-						let countryCode = Object.keys(codes).filter(key => codes[key] === countryName);
-		        if (countryName === 'Channel Islands' || countryName === 'Diamond Princess') { countryCode = 'GB'; }
-						countryStats['0'].code = countryCode;
-					} else {
-						countryStats = undefined;
-					}
-					dispatch(loadCountryStats(countryStats));
-				}
+      if (countryName) {
+        let countryStats = response.data.countries_stat;
+        countryStats = countryStats.filter(country => country.country_name === countryName);
+        if (countryStats.length > 0) {
+          let countryCode = Object.keys(codes).filter(key => codes[key] === countryName);
+          if (countryName === 'Channel Islands' || countryName === 'Diamond Princess') { countryCode = 'GB'; }
+          countryStats['0'].code = countryCode;
+        } else {
+          countryStats = undefined;
+        }
+        dispatch(loadCountryStats(countryStats));
+      }
     });
 };

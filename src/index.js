@@ -12,14 +12,15 @@ import DisplayCountry from './containers/DisplayCountry/DisplayCountry';
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-		<Provider store={store}>
-			<Router>
-				<Route path="/" exact component={App} />
-					<Route
-						path="/:country"
-						component={DisplayCountry} />
-			</Router>
-			<Footer />
-		</Provider>,
+  <Provider store={store}>
+    <Router>
+      <Route path="/" exact component={App} />
+      <Route
+        path="/:country"
+        component={DisplayCountry}
+      />
+    </Router>
+    <Footer />
+  </Provider>,
   document.getElementById('root'),
 );

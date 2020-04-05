@@ -4,7 +4,7 @@
 	margin: auto;
 	padding: 5px;
 	display: grid;
-	grid-template-rows: 3fr 2fr 1fr;
+	grid-template-rows: 140px 100px 60px;
 	grid-template-columns: 1fr;
 	font-family: 'Baloo 2', cursive;
 	font-size: 20px;
@@ -30,7 +30,7 @@
 }
 
 .countryFlag {
-	padding: 20px;
+	padding: 20px 20px 0 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -40,7 +40,7 @@
 }
 
 .country_statWrapper {
-	padding: 20px;
+	padding: 0 20px;
 	display: grid;
 	grid-template-rows: 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
