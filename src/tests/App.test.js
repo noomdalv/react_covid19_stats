@@ -18,19 +18,19 @@ describe('App Component renders without errors', () => {
 		appComponent = shallow(<App store={store} />).dive().dive();
   });
 
-	it('It should render main container and img thumbnail', () => {
+	it('should render main container and img thumbnail', () => {
 		const idContainer = appComponent.find('div#container');
 		const img = appComponent.find('img#thumbnail');
 		expect(idContainer.length).toBe(1);
 		expect(img.length).toBe(1);
 	})
 
-	it('renders GlobalStats component', () => {
+	it('should render GlobalStats component', () => {
 		const GlobalStats = appComponent.find('GlobalStats')
 		expect(GlobalStats.length).toEqual(1);
 	});
 
-	it('renders CountryFilter component', () => {
+	it('should render CountryFilter component', () => {
 		const CountryFilter = appComponent.find('withRouter(CountryFilter)')
 		expect(CountryFilter.length).toEqual(1);
 	});

@@ -10,7 +10,7 @@ const Country = ({ countryStats }) => {
           <div id={styles.country_heading}>
 						<h2 id={styles.title_header}>STATISTICS BY COUNTRY</h2>
 						<div className={styles.countryFlag}>
-							<h1>{ countryStats[0] }</h1>
+							<h1 id={styles.countryName}>{ countryStats[0] }</h1>
 							<img src={`https://www.countryflags.io/${countryStats[10]}/shiny/64.png`} alt="flag" />
 						</div>
           </div>
