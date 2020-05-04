@@ -27,11 +27,16 @@
 
 [Coronavirus monitor](https://rapidapi.com/astsiatsko/api/coronavirus-monitor)
 
+## Future features
+
+- Graphic indicators
+- Top 10
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
-### Setup
+## Setup
 
 Open a terminal window, go to the location you'd like to add the project and then run the commands below.
 
@@ -45,6 +50,12 @@ npm install
 
 ```console
 npm start
+```
+
+## Run Tests
+
+```console
+npm test
 ```
 
 ## Author
