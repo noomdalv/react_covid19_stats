@@ -44,7 +44,7 @@ class CountryFilter extends React.Component {
 CountryFilter.propTypes = {
   getCountries: PropTypes.func.isRequired,
   countries: PropTypes.instanceOf(Array).isRequired,
-  history: PropTypes.instanceOf(Array).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 

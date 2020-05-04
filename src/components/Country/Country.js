@@ -5,13 +5,14 @@ import styles from './Country.module.css';
 
 const Country = ({ countryStats }) => {
   if (countryStats.length > 0 && countryStats[0] !== 'not found') {
+		console.log("countryStats from country", countryStats)
     return (
       <div id={styles.countryInfo}>
         <div id={styles.country_heading}>
           <h2 id={styles.title_header}>STATISTICS BY COUNTRY</h2>
           <div className={styles.countryFlag}>
             <h1 id={styles.countryName}>{ countryStats[0] }</h1>
-            <img src={`https://www.countryflags.io/${countryStats[10]}/shiny/64.png`} alt="flag" />
+            <img src={`https://www.countryflags.io/${countryStats[13]}/shiny/64.png`} alt="flag" />
           </div>
         </div>
         <div className={styles.country_statWrapper}>
